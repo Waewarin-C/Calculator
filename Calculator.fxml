@@ -2,16 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane hgap="5.0" layoutY="147.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" vgap="5.0">
+      <GridPane hgap="5.0" layoutY="64.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" vgap="5.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -19,7 +20,7 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -28,34 +29,111 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField />
-            <Button mnemonicParsing="false" prefWidth="75.0" text="AC" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="&lt;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="+/-" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="√" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="7" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="X" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="4" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="-" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="1" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="+" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="0" GridPane.rowIndex="6" />
-            <Button mnemonicParsing="false" text="." GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button mnemonicParsing="false" text="=" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField prefHeight="30.0" GridPane.columnSpan="4">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font></TextField>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="AC" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="&lt;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="+/-" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="√" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="7" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="X" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="0" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="143.0" text="=" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font></Button>
          </children>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </GridPane>
+      <Label layoutX="14.0" layoutY="14.0" text="Calculator">
+         <font>
+            <Font name="Rockwell" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
