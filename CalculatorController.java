@@ -74,19 +74,9 @@ public class CalculatorController {
 
     }
 
-    public void clearEntry()
-    {
-
-    }
-
     public void clearAll()
     {
 
-    }
-
-    private void setDisplayNumber(String displayNumber)
-    {
-        numberDisplay.setText(displayNumber);
     }
 
     private void displayNumberAfterOperation()
@@ -102,5 +92,10 @@ public class CalculatorController {
         {
             setDisplayNumber(Float.toString(this.total));
         }
+    }
+
+    private void setDisplayNumber(String displayNumber)
+    {
+        numberDisplay.setText(displayNumber);
     }
 }

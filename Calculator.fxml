@@ -29,15 +29,15 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="numberDisplay" alignment="CENTER_RIGHT" prefHeight="30.0" GridPane.columnSpan="4">
+            <TextField fx:id="numberDisplay" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" GridPane.columnSpan="4">
                <font>
                   <Font name="Rockwell" size="24.0" />
                </font></TextField>
-            <Button mnemonicParsing="false" onAction="#clearAll" prefHeight="30.0" prefWidth="70.0" text="AC" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#clearAll" prefHeight="65.0" prefWidth="70.0" text="AC" GridPane.rowIndex="1" GridPane.rowSpan="2">
                <font>
                   <Font name="Rockwell" size="12.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#clearEntry" prefHeight="30.0" prefWidth="70.0" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#plusMinus" prefHeight="30.0" prefWidth="70.0" text="+/-" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Rockwell" size="12.0" />
                </font></Button>
@@ -45,11 +45,7 @@
                <font>
                   <Font name="Rockwell" size="12.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#deleteANumber" prefHeight="30.0" prefWidth="70.0" text="&lt;" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Rockwell" size="12.0" />
-               </font></Button>
-            <Button mnemonicParsing="false" onAction="#plusMinus" prefHeight="30.0" prefWidth="70.0" text="+/-" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#deleteANumber" prefHeight="30.0" prefWidth="70.0" text="&lt;-" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font name="Rockwell" size="12.0" />
                </font></Button>
