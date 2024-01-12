@@ -73,7 +73,7 @@ public class CalculatorController {
 
     public void squareNumber()
     {
-
+        setCurrentNumber(Double.toString(Math.pow(Float.parseFloat(numberDisplay.getText()), 2)));
     }
 
     public void squareRootNumber()
@@ -83,13 +83,13 @@ public class CalculatorController {
 
     public void deleteANumber()
     {
-        this.currentNumber = this.currentNumber.substring(0, this.currentNumber.length()-1);
+        setCurrentNumber(this.currentNumber.substring(0, this.currentNumber.length()-1));
         setDisplayNumber(this.currentNumber);
     }
 
     public void clearAll()
     {
-        this.currentNumber = "";
+        setCurrentNumber("");
         numberDisplay.clear();
     }
 
@@ -106,6 +106,11 @@ public class CalculatorController {
         {
             setDisplayNumber(Float.toString(this.total));
         }
+    }
+
+    private void setCurrentNumber(String currentNumber)
+    {
+        this.currentNumber = currentNumber;
     }
 
     private void setDisplayNumber(String displayNumber)
