@@ -51,7 +51,8 @@ public class CalculatorController {
 
     public void convertToPercent()
     {
-
+        this.currentNumber = Float.toString(Float.parseFloat(this.currentNumber) / 100);
+        setDisplayNumber(this.currentNumber);
     }
 
     public void plusMinus()
@@ -71,12 +72,14 @@ public class CalculatorController {
 
     public void deleteANumber()
     {
-
+        this.currentNumber = this.currentNumber.substring(0, this.currentNumber.length()-1);
+        setDisplayNumber(this.currentNumber);
     }
 
     public void clearAll()
     {
-
+        this.currentNumber = "";
+        numberDisplay.clear();
     }
 
     private void displayNumberAfterOperation()
