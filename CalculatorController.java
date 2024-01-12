@@ -57,7 +57,18 @@ public class CalculatorController {
 
     public void plusMinus()
     {
+        float number = Float.parseFloat(this.currentNumber);
 
+        if(number >= 0)
+        {
+            this.currentNumber = "-" + this.currentNumber;
+        }
+        else
+        {
+            this.currentNumber = this.currentNumber.substring(1, this.currentNumber.length());
+        }
+
+        setDisplayNumber(this.currentNumber);
     }
 
     public void squareNumber()
