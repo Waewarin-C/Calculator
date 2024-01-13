@@ -8,6 +8,8 @@ public class CalculatorController {
     private TextField numberDisplay;
 
     private String currentNumber = "";
+    private String prevOperation = "";
+
     private double total = 0;
 
     public void showOnDisplay(ActionEvent event)
@@ -16,30 +18,56 @@ public class CalculatorController {
         setDisplayNumber(this.currentNumber);
     }
 
+    public void operationPressed(ActionEvent event)
+    {
+        String operation = ((Button) event.getSource()).getText();
+
+        if(operation.equals("+"))
+        {
+            System.out.println(operation);
+        }
+        else if(operation.equals("-"))
+        {
+            System.out.println(operation);
+        }
+        else if(operation.equals("X"))
+        {
+            System.out.println(operation);
+        }
+        else if(operation.equals("÷"))
+        {
+            System.out.println(operation);
+        }
+        else if(operation.equals("="))
+        {
+            System.out.println(operation);
+        }
+    }
+
     public void add()
     {
-        this.total += Double.parseDouble(currentNumber);
+        this.total += Double.parseDouble(this.currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void subtract()
     {
-        this.total -= Double.parseDouble(currentNumber);
+        this.total -= Double.parseDouble(this.currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void multiply()
     {
-        this.total *= Double.parseDouble(currentNumber);
+        this.total *= Double.parseDouble(this.currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void divide()
     {
-        this.total /= Double.parseDouble(currentNumber);
+        this.total /= Double.parseDouble(this.currentNumber);
 
         displayNumberAfterOperation();
     }
@@ -92,6 +120,7 @@ public class CalculatorController {
     public void clearAll()
     {
         setCurrentNumber("");
+        total = 0;
         numberDisplay.clear();
     }
 
