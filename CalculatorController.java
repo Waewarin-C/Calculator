@@ -8,7 +8,7 @@ public class CalculatorController {
     private TextField numberDisplay;
 
     private String currentNumber = "";
-    private float total = 0;
+    private double total = 0;
 
     public void showOnDisplay(ActionEvent event)
     {
@@ -18,28 +18,28 @@ public class CalculatorController {
 
     public void add()
     {
-        this.total += Float.parseFloat(currentNumber);
+        this.total += Double.parseDouble(currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void subtract()
     {
-        this.total -= Float.parseFloat(currentNumber);
+        this.total -= Double.parseDouble(currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void multiply()
     {
-        this.total *= Float.parseFloat(currentNumber);
+        this.total *= Double.parseDouble(currentNumber);
 
         displayNumberAfterOperation();
     }
 
     public void divide()
     {
-        this.total /= Float.parseFloat(currentNumber);
+        this.total /= Double.parseDouble(currentNumber);
 
         displayNumberAfterOperation();
     }
@@ -51,13 +51,13 @@ public class CalculatorController {
 
     public void convertToPercent()
     {
-        this.currentNumber = Float.toString(Float.parseFloat(this.currentNumber) / 100);
+        this.currentNumber = Double.toString(Double.parseDouble(this.currentNumber) / 100);
         setDisplayNumber(this.currentNumber);
     }
 
     public void plusMinus()
     {
-        float number = Float.parseFloat(this.currentNumber);
+        double number = Double.parseDouble(this.currentNumber);
 
         if(number >= 0)
         {
@@ -74,11 +74,13 @@ public class CalculatorController {
     public void squareNumber()
     {
         setCurrentNumber(Double.toString(Math.pow(Float.parseFloat(numberDisplay.getText()), 2)));
+        displayNumberAfterOperation();
     }
 
     public void squareRootNumber()
     {
-
+        setCurrentNumber((Double.toString(Math.sqrt(Double.parseDouble(numberDisplay.getText())))));
+        displayNumberAfterOperation();
     }
 
     public void deleteANumber()
@@ -104,7 +106,7 @@ public class CalculatorController {
         }
         else
         {
-            setDisplayNumber(Float.toString(this.total));
+            setDisplayNumber(Double.toString(this.total));
         }
     }
 
