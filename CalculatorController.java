@@ -22,59 +22,83 @@ public class CalculatorController {
     {
         String operation = ((Button) event.getSource()).getText();
 
-        if(operation.equals("+"))
-        {
-            System.out.println(operation);
-        }
-        else if(operation.equals("-"))
-        {
-            System.out.println(operation);
-        }
-        else if(operation.equals("X"))
-        {
-            System.out.println(operation);
-        }
-        else if(operation.equals("÷"))
-        {
-            System.out.println(operation);
-        }
-        else if(operation.equals("="))
-        {
-            System.out.println(operation);
-        }
-    }
+        performOperation();
 
-    public void add()
-    {
-        this.total += Double.parseDouble(this.currentNumber);
-
-        displayNumberAfterOperation();
-    }
-
-    public void subtract()
-    {
-        this.total -= Double.parseDouble(this.currentNumber);
-
-        displayNumberAfterOperation();
-    }
-
-    public void multiply()
-    {
-        this.total *= Double.parseDouble(this.currentNumber);
-
-        displayNumberAfterOperation();
-    }
-
-    public void divide()
-    {
-        this.total /= Double.parseDouble(this.currentNumber);
+        this.prevOperation = operation;
 
         displayNumberAfterOperation();
     }
 
     public void equals()
     {
+        performOperation();
 
+        this.prevOperation = "=";
+
+        displayNumberAfterOperation();
+    }
+
+    /*public void add()
+    {
+        performOperation();
+
+        this.prevOperation = "+";
+
+        displayNumberAfterOperation();
+    }
+
+    public void subtract()
+    {
+        performOperation();
+
+        this.prevOperation = "-";
+
+        displayNumberAfterOperation();
+    }
+
+    public void multiply()
+    {
+        performOperation();
+
+        this.prevOperation = "X";
+
+        displayNumberAfterOperation();
+    }
+
+    public void divide()
+    {
+        performOperation();
+
+        this.prevOperation = "÷";
+
+        displayNumberAfterOperation();
+    }*/
+
+    public void performOperation()
+    {
+        double prevNumber = Double.parseDouble(numberDisplay.getText());
+
+        if(this.prevOperation.equals("+"))
+        {
+            this.total += prevNumber;
+        }
+        else if(this.prevOperation.equals("-"))
+        {
+            this.total -= prevNumber;
+        }
+        else if(this.prevOperation.equals("X"))
+        {
+            this.total *= prevNumber;
+        }
+        else if(this.prevOperation.equals("÷"))
+        {
+            this.total /= prevNumber;
+        }
+        else
+        {
+            this.total = Double.parseDouble(this.currentNumber);
+            return;
+        }
     }
 
     public void convertToPercent()
