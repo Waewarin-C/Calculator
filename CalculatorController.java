@@ -14,6 +14,11 @@ public class CalculatorController {
 
     public void showOnDisplay(ActionEvent event)
     {
+        if(this.prevOperation.equals("="))
+        {
+            this.total = 0;
+        }
+
         this.currentNumber += ((Button)event.getSource()).getText();
         setDisplayNumber(this.currentNumber);
     }
@@ -38,42 +43,6 @@ public class CalculatorController {
         displayNumberAfterOperation();
     }
 
-    /*public void add()
-    {
-        performOperation();
-
-        this.prevOperation = "+";
-
-        displayNumberAfterOperation();
-    }
-
-    public void subtract()
-    {
-        performOperation();
-
-        this.prevOperation = "-";
-
-        displayNumberAfterOperation();
-    }
-
-    public void multiply()
-    {
-        performOperation();
-
-        this.prevOperation = "X";
-
-        displayNumberAfterOperation();
-    }
-
-    public void divide()
-    {
-        performOperation();
-
-        this.prevOperation = "÷";
-
-        displayNumberAfterOperation();
-    }*/
-
     public void performOperation()
     {
         double prevNumber = Double.parseDouble(numberDisplay.getText());
@@ -93,11 +62,6 @@ public class CalculatorController {
         else if(this.prevOperation.equals("÷"))
         {
             this.total /= prevNumber;
-        }
-        else
-        {
-            this.total = Double.parseDouble(this.currentNumber);
-            return;
         }
     }
 
