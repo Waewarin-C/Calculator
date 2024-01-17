@@ -89,7 +89,7 @@ public class CalculatorController {
 
     public void squareNumber()
     {
-        setCurrentNumber(Double.toString(Math.pow(Float.parseFloat(numberDisplay.getText()), 2)));
+        setCurrentNumber(Double.toString(Math.pow(Double.parseDouble(numberDisplay.getText()), 2)));
         displayNumberAfterOperation();
     }
 
