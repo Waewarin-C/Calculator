@@ -31,7 +31,9 @@ public class CalculatorController {
 
         this.prevOperation = operation;
 
-        displayNumberAfterOperation();
+        String totalString = convertNumberToString(this.total);
+
+        displayNumberAfterOperation(totalString);
     }
 
     public void equals()
@@ -40,7 +42,9 @@ public class CalculatorController {
 
         this.prevOperation = "=";
 
-        displayNumberAfterOperation();
+        String totalString = convertNumberToString(this.total);
+
+        displayNumberAfterOperation(totalString);
     }
 
     public void performOperation()
@@ -89,14 +93,22 @@ public class CalculatorController {
 
     public void squareNumber()
     {
-        setCurrentNumber(Double.toString(Math.pow(Double.parseDouble(numberDisplay.getText()), 2)));
-        setDisplayNumber(this.currentNumber);
+        double square = Math.pow(Double.parseDouble(numberDisplay.getText()), 2);
+
+        String numberString = convertNumberToString(square);
+
+        setCurrentNumber(numberString);
+        displayNumberAfterOperation(numberString);
     }
 
     public void squareRootNumber()
     {
-        setCurrentNumber((Double.toString(Math.sqrt(Double.parseDouble(numberDisplay.getText())))));
-        setDisplayNumber(this.currentNumber);
+        double squareRoot = Math.sqrt(Double.parseDouble(numberDisplay.getText()));
+
+        String numberString = convertNumberToString(squareRoot);
+
+        setCurrentNumber(numberString);
+        displayNumberAfterOperation(numberString);
     }
 
     public void deleteANumber()
@@ -112,19 +124,27 @@ public class CalculatorController {
         numberDisplay.clear();
     }
 
-    private void displayNumberAfterOperation()
+    private String convertNumberToString(double number)
     {
-        setCurrentNumber("");
+        String numString = "";
 
-        if(this.total == Math.floor(this.total))
+        if(number == Math.floor(number))
         {
-            int currentTotal = (int)this.total;
-            setDisplayNumber(Integer.toString(currentTotal));
+            numString = Integer.toString((int)number);
         }
         else
         {
-            setDisplayNumber(Double.toString(this.total));
+            numString = Double.toString(number);
         }
+
+        return numString;
+    }
+
+    private void displayNumberAfterOperation(String number)
+    {
+        setCurrentNumber("");
+
+        setDisplayNumber(number);
     }
 
     private void setCurrentNumber(String currentNumber)
