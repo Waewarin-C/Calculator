@@ -67,7 +67,7 @@ public class CalculatorController {
 
     public void convertToPercent()
     {
-        this.currentNumber = Double.toString(Double.parseDouble(this.currentNumber) / 100);
+        setCurrentNumber(Double.toString(Double.parseDouble(this.currentNumber) / 100));
         setDisplayNumber(this.currentNumber);
     }
 
@@ -77,11 +77,11 @@ public class CalculatorController {
 
         if(number >= 0)
         {
-            this.currentNumber = "-" + this.currentNumber;
+            setCurrentNumber("-" + this.currentNumber);
         }
         else
         {
-            this.currentNumber = this.currentNumber.substring(1, this.currentNumber.length());
+            setCurrentNumber(this.currentNumber.substring(1, this.currentNumber.length()));
         }
 
         setDisplayNumber(this.currentNumber);
@@ -90,13 +90,13 @@ public class CalculatorController {
     public void squareNumber()
     {
         setCurrentNumber(Double.toString(Math.pow(Double.parseDouble(numberDisplay.getText()), 2)));
-        displayNumberAfterOperation();
+        setDisplayNumber(this.currentNumber);
     }
 
     public void squareRootNumber()
     {
         setCurrentNumber((Double.toString(Math.sqrt(Double.parseDouble(numberDisplay.getText())))));
-        displayNumberAfterOperation();
+        setDisplayNumber(this.currentNumber);
     }
 
     public void deleteANumber()
@@ -114,7 +114,7 @@ public class CalculatorController {
 
     private void displayNumberAfterOperation()
     {
-        this.currentNumber = "";
+        setCurrentNumber("");
 
         if(this.total == Math.floor(this.total))
         {
