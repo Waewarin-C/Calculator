@@ -67,6 +67,10 @@ public class CalculatorController {
         {
             this.total /= prevNumber;
         }
+        else
+        {
+            this.total = prevNumber;
+        }
     }
 
     public void convertToPercent()
@@ -77,15 +81,16 @@ public class CalculatorController {
 
     public void plusMinus()
     {
-        double number = Double.parseDouble(this.currentNumber);
+        double number = Double.parseDouble(numberDisplay.getText());
+        String numberString = convertNumberToString(number);
 
         if(number >= 0)
         {
-            setCurrentNumber("-" + this.currentNumber);
+            setCurrentNumber("-" + numberString);
         }
         else
         {
-            setCurrentNumber(this.currentNumber.substring(1, this.currentNumber.length()));
+            setCurrentNumber(numberString.substring(1, numberString.length()));
         }
 
         setDisplayNumber(this.currentNumber);
