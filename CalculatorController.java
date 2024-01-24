@@ -12,6 +12,8 @@ public class CalculatorController {
 
     private double total = 0;
 
+    private boolean isDivideByZero = false;
+
     public void showOnDisplay(ActionEvent event)
     {
         if(this.prevOperation.equals("="))
@@ -33,7 +35,15 @@ public class CalculatorController {
 
         String totalString = convertNumberToString(this.total);
 
-        displayNumberAfterOperation(totalString);
+        if(this.isDivideByZero)
+        {
+            setDisplayNumber("Error");
+            this.isDivideByZero = false;
+        }
+        else
+        {
+            displayNumberAfterOperation(totalString);
+        }
     }
 
     public void equals()
@@ -65,6 +75,12 @@ public class CalculatorController {
         }
         else if(this.prevOperation.equals("÷"))
         {
+            if(prevNumber == 0)
+            {
+                this.isDivideByZero = true;
+                return;
+            }
+
             this.total /= prevNumber;
         }
         else
@@ -75,7 +91,7 @@ public class CalculatorController {
 
     public void convertToPercent()
     {
-        String percentString = Double.toString(Double.parseDouble(this.currentNumber) / 100);
+        String percentString = Double.toString(Double.parseDouble(numberDisplay.getText()) / 100);
         displayNumberAfterOperation(percentString);
     }
 
