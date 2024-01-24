@@ -75,8 +75,8 @@ public class CalculatorController {
 
     public void convertToPercent()
     {
-        setCurrentNumber(Double.toString(Double.parseDouble(this.currentNumber) / 100));
-        setDisplayNumber(this.currentNumber);
+        String percentString = Double.toString(Double.parseDouble(this.currentNumber) / 100);
+        displayNumberAfterOperation(percentString);
     }
 
     public void plusMinus()
@@ -86,14 +86,12 @@ public class CalculatorController {
 
         if(number >= 0)
         {
-            setCurrentNumber("-" + numberString);
+            displayNumberAfterOperation("-" + numberString);
         }
         else
         {
-            setCurrentNumber(numberString.substring(1, numberString.length()));
+            displayNumberAfterOperation(numberString.substring(1, numberString.length()));
         }
-
-        setDisplayNumber(this.currentNumber);
     }
 
     public void squareNumber()
