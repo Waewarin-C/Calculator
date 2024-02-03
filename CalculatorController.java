@@ -38,7 +38,8 @@ public class CalculatorController {
         if(this.isDivideByZero)
         {
             setDisplayNumber("Error");
-            this.isDivideByZero = false;
+            setCurrentNumber("");
+            //this.isDivideByZero = false;
         }
         else
         {
@@ -54,38 +55,54 @@ public class CalculatorController {
 
         String totalString = convertNumberToString(this.total);
 
-        displayNumberAfterOperation(totalString);
+        if(this.isDivideByZero)
+        {
+            setDisplayNumber("Error");
+            setCurrentNumber("");
+            //this.isDivideByZero = false;
+        }
+        else
+        {
+            displayNumberAfterOperation(totalString);
+        }
     }
 
     public void performOperation()
     {
-        double prevNumber = Double.parseDouble(numberDisplay.getText());
+        try
+        {
+            double prevNumber = Double.parseDouble(numberDisplay.getText());
 
-        if(this.prevOperation.equals("+"))
-        {
-            this.total += prevNumber;
-        }
-        else if(this.prevOperation.equals("-"))
-        {
-            this.total -= prevNumber;
-        }
-        else if(this.prevOperation.equals("X"))
-        {
-            this.total *= prevNumber;
-        }
-        else if(this.prevOperation.equals("÷"))
-        {
-            if(prevNumber == 0)
+            if(this.prevOperation.equals("+"))
             {
-                this.isDivideByZero = true;
-                return;
+                this.total += prevNumber;
             }
+            else if(this.prevOperation.equals("-"))
+            {
+                this.total -= prevNumber;
+            }
+            else if(this.prevOperation.equals("X"))
+            {
+                this.total *= prevNumber;
+            }
+            else if(this.prevOperation.equals("÷"))
+            {
+                if(prevNumber == 0)
+                {
+                    this.isDivideByZero = true;
+                    return;
+                }
 
-            this.total /= prevNumber;
+                this.total /= prevNumber;
+            }
+            else
+            {
+                this.total = prevNumber;
+            }
         }
-        else
+        catch(NumberFormatException e)
         {
-            this.total = prevNumber;
+            return;
         }
     }
 
@@ -141,6 +158,7 @@ public class CalculatorController {
         setCurrentNumber("");
         total = 0;
         numberDisplay.clear();
+        this.isDivideByZero = false;
     }
 
     private String convertNumberToString(double number)
