@@ -2,7 +2,7 @@
 
 ## Waewarin Chindarassami
 
-#### This project is completed and is archived
+### This project is completed and is archived
 
 ### Application
 The application is a basic calculator. 
