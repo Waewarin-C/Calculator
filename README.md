@@ -24,3 +24,4 @@ The following operations can be performed:
 The purpose of this project is to practice and develop more experience with Java and JavaFX; thus, this is a small project.
 
 ### Screenshot
+<img src=".Screenshot.JPG" width="350" height="400"></img>
