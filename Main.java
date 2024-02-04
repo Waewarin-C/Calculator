@@ -4,6 +4,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Gets the stage ready and launches the calculator application
+ *
+ * @author Waewarin Chindarassami
+ */
 public class Main extends Application {
 
     private Stage stage;
